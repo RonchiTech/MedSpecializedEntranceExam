@@ -14,7 +14,7 @@ To install the necessary dependencies, you need to open cmd. Be sure that the pa
 
 ### `npm install`
 
-Iff the Sass/Scss is not working properly, you could try uninstalling then reinstall it
+If the Sass/Scss is not working properly, you could try uninstalling then reinstall it
 
 ### `npm uninstall node-sass`
 
