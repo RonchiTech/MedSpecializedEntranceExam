@@ -26,20 +26,60 @@
     width: 90%;
   }
   input {
-    padding: 5px 15px;
+    padding: 10px 35px;
     outline: none;
     border: 1px solid #868686;
     border-radius: 3px;
   }
   button {
-      background-color: #3686c8;
-      border: none;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 3px;
+    background-color: #3686c8;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 3px;
   }
   img {
-      width: 20px;
-      vertical-align: middle;
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  .login-card__input {
+    position: relative;
+    .left-image {
+      position: absolute;
+      top: 13px;
+      left: 25px;
+    }
+    .right-image {
+        width: 30px;
+      position: absolute;
+      top: 8px;
+      right: 25px;
+      cursor: pointer;
+    }
+  }
+  .login-card__forgot-password {
+    margin: 25px 0 50px 0;
+    cursor: pointer;
+    &:hover {
+      color: #800080;
+    }
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #9b9b9b;
+    color: #9b9b9b;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    width: 80%;
+    margin: 0 auto;
+    &::after {
+      content: 'or';
+      position: relative;
+      top: -13px;
+      padding: 5px;
+      background: #fff;
+    }
   }
 }
