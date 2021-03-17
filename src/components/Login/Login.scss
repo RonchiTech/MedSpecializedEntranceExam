@@ -82,4 +82,19 @@
       background: #fff;
     }
   }
+  .login-card__alternate-login{
+      width: 70%;
+      margin: 10px auto;
+      padding: 5px;
+      border: 1px solid #b1b1b1;
+      border-radius: 5px;
+      cursor: pointer;
+      span {
+          margin-left: 5px;
+      }
+      &:hover {
+          border: 1px solid #000;
+          color: #000;
+      }
+  }
 }
