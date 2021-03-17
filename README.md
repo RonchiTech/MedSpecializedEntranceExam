@@ -8,13 +8,13 @@ or you can open your cmd and type the following:
 
 ### `git clone https://github.com/RonchiTech/MedSpecializedEntranceExam.git`
 
-extract it and then open the file using your favorite text editor.
+Extract the file and then click the first folder, and after that you'll going to see another folder with the same name. Open that using your favorite text editor.
 
-To install the necessary dependencies, you need to open cmd and be sure that the path is aligned with the project path. Then type:
+To install the necessary dependencies, you need to open cmd. Be sure that the path you see on your cmd is the exact path of folder. Then type:
 
 ### `npm install`
 
-if the Sass/Scss is not working properly, you could try uninstalling then reinstall it
+Iff the Sass/Scss is not working properly, you could try uninstalling then reinstall it
 
 ### `npm uninstall node-sass`
 
