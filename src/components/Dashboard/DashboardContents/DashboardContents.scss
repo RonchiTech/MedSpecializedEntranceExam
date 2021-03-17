@@ -1,14 +1,80 @@
-.contents{
+.container {
+  .contents {
     width: 100%;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     color: #fff;
-    background-color: rgb(56, 127, 194);
+    background-color: #387fc2;
     padding: 15px;
-    p{
-        margin: 0 15px;
+    p {
+      margin: 0 15px;
     }
-    .logout{
-        cursor: pointer;
+    .logout {
+      cursor: pointer;
     }
+  }
+  .user {
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+
+    button {
+      padding: 10px 45px;
+      color: #fff;
+      background-color: rgb(61, 199, 61);
+      border: none;
+      border-radius: 5px;
+    }
+  }
+  hr {
+    width: 97%;
+    margin: 0 auto;
+  }
+  .category,
+  .search {
+    padding: 8px;
+    border: 1px solid rgb(85, 83, 83);
+    border-radius: 5px;
+  }
+  .category {
+    width: 130px;
+    margin: 15px 10px 25px 22px;
+  }
+  .search {
+    width: 450px;
+  }
+
+  table {
+    color: #000;
+    border-collapse: collapse;
+    width: 98%;
+    margin: 0 auto;
+    img {
+      width: 25px;
+    }
+  }
+  tr th {
+    background-color: #387fc2;
+    color: #fff;
+  }
+  .email-logo {
+    text-align: start;
+    img {
+      margin: 0 15px;
+    }
+  }
+  .email-header {
+    text-align: start;
+    padding-left: 25px
+  }
+  th,
+  td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
 }
