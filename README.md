@@ -2,15 +2,15 @@
 
 In the project directory, you can:
 
-### `Download the app by Clicking the Code located somewhere on the right (with a green background color) then Download Zip and extract it
+### `Download the app by Clicking the Code located somewhere on the right (with a green background color) then Download Zip`
 
 or you can open your cmd and type the following:
 
 ### `git clone https://github.com/RonchiTech/MedSpecializedEntranceExam.git`
 
-then open the file using your favorite text editor.
+extract it and then open the file using your favorite text editor.
 
-To install the necessary dependencies, open cmd and be sure that the path is aligned with the project path then type:
+To install the necessary dependencies, you need to open cmd and be sure that the path is aligned with the project path. Then type:
 
 ### `npm install`
 
