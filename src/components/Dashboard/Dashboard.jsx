@@ -1,26 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import * as action from '../../store/actions';
 import './Dashboard.scss';
 
 import DashboardNav from './DashboardNav/DashboardNav';
-
-const Dashboard = ({ onLogOut }) => {
-  const logout = () => {
-    onLogOut();
-    window.location.reload();
-  };
+import DashboardContent from './DashboardContents/DashboardContents';
+const Dashboard = () => {
   return (
     <div className="dashboard">
       <aside className="dashboard-navigation">
         <DashboardNav />
       </aside>
       <aside className="dashboard-contents">
-        <h2 style={{ color: 'black' }}>
-          You are currently logged in{' '}
-          <button onClick={() => logout()}>Log out</button>
-        </h2>
+        <Redirect from="/" to="/users" />
+        <Switch>
+          <Route path="/users" component={DashboardContent} />
+        </Switch>
       </aside>
     </div>
   );
@@ -32,7 +28,6 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLogOut: () => dispatch(action.logout()),
     onLogIn: () => dispatch(action.loginSuccess()),
   };
 };

@@ -1,0 +1,14 @@
+.contents{
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    color: #fff;
+    background-color: rgb(56, 127, 194);
+    padding: 15px;
+    p{
+        margin: 0 15px;
+    }
+    .logout{
+        cursor: pointer;
+    }
+}
