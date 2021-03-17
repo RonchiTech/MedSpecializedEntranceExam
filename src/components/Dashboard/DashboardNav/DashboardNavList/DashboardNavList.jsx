@@ -39,7 +39,7 @@ const DashboardNavList = () => {
         <span>Teams</span>
       </li>
 
-      <NavLink to="/users" exact activeClassName="active">
+      <NavLink to="/users"  activeClassName="active">
         <li>
           <img src={User} alt="logo" />
           <span>Users</span>
