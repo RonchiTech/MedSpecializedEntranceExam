@@ -2,13 +2,13 @@
 
 In the project directory, you can:
 
-### `Download the app by Clicking the Code located somewhere on the right (with a green background color) then Download Zip`
+### Download the app by clicking the Code located somewhere on the right (the one with a green background color) then click Download Zip
 
 or you can open your cmd and type the following:
 
 ### `git clone https://github.com/RonchiTech/MedSpecializedEntranceExam.git`
 
-Extract the file and then click the first folder, and after that you'll going to see another folder with the same name. Open that using your favorite text editor.
+Find the Downloaded file, extract it and then find and click the folder.  After clicking it  you'll going to see another folder with the same name. Open that using your favorite text editor.
 
 To install the necessary dependencies, you need to open cmd. Be sure that the path you see on your cmd is the exact path of folder. Then type:
 
