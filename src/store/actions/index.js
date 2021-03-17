@@ -2,6 +2,7 @@ import * as action from './actionTypes';
 import axios from 'axios';
 export const loginInit = (email, password, isSignUp) => {
   return (dispatch) => {
+    dispatch(initialize());
     const data = {
       email,
       password,
@@ -23,7 +24,7 @@ export const loginInit = (email, password, isSignUp) => {
       })
       .catch((error) => {
         console.log(error.response.data.error.message);
-       
+
         dispatch(loginFailed(error.response.data.error.message));
       });
   };
@@ -43,7 +44,7 @@ export const loginSuccess = (data) => {
 export const loginFailed = (error) => {
   return {
     type: action.LOGIN_FAILED,
-    error
+    error,
   };
 };
 
@@ -53,8 +54,13 @@ export const logout = () => {
     dispatch(logoutChecker());
   };
 };
-export const logoutChecker=()=>{
-    return {
-        type: action.LOGOUT_CHECKER,
-    }
-}
+export const logoutChecker = () => {
+  return {
+    type: action.LOGOUT_CHECKER,
+  };
+};
+export const initialize = () => {
+  return {
+    type: action.INITIALIZE,
+  };
+};

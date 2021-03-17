@@ -30,6 +30,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.error,
+        isLoading: false
+      };
+    case actionType.INITIALIZE:
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return state;

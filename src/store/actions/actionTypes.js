@@ -4,3 +4,5 @@ export const LOGIN_FAILED = 'LOGIN_FAILED';
 
 export const LOGOUT = 'LOGOUT';
 export const LOGOUT_CHECKER = 'LOGOUT_CHECKER';
+
+export const INITIALIZE = 'INITIALIZE';
