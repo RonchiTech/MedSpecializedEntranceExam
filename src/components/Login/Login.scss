@@ -1,0 +1,45 @@
+.login-card {
+  position: absolute;
+  top: 10%;
+  right: 22%;
+  height: 500px;
+  width: 300px;
+  background-color: #fff;
+  border-top: 5px solid #3686c8;
+  color: #868686;
+  text-align: center;
+  .login-card__welcome {
+    margin-top: 15px;
+    span {
+      color: #000;
+      font-weight: bolder;
+    }
+  }
+  .login-card__system-name {
+    margin-bottom: 25px;
+  }
+  input:first-of-type {
+    margin: 5px 0;
+  }
+  input,
+  button {
+    width: 90%;
+  }
+  input {
+    padding: 5px 15px;
+    outline: none;
+    border: 1px solid #868686;
+    border-radius: 3px;
+  }
+  button {
+      background-color: #3686c8;
+      border: none;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 3px;
+  }
+  img {
+      width: 20px;
+      vertical-align: middle;
+  }
+}
