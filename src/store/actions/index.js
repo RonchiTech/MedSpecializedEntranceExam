@@ -1,0 +1,60 @@
+import * as action from './actionTypes';
+import axios from 'axios';
+export const loginInit = (email, password, isSignUp) => {
+  return (dispatch) => {
+    const data = {
+      email,
+      password,
+      returnSecureToken: true,
+    };
+    let url =
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCV0FcQMyUkYfVjSQxJ6HEm_u3NHK6zRns';
+    if (isSignUp) {
+      url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCV0FcQMyUkYfVjSQxJ6HEm_u3NHK6zRns';
+    }
+    axios
+      .post(url, data)
+      .then((response) => {
+        localStorage.setItem('localId', response.data.localId);
+        localStorage.setItem('idToken', response.data.idToken);
+        localStorage.setItem('expiresIn', response.data.expiresIn);
+        dispatch(loginSuccess(response.data));
+      })
+      .catch((error) => {
+        console.log(error.response.data.error.message);
+       
+        dispatch(loginFailed(error.response.data.error.message));
+      });
+  };
+};
+
+export const loginSuccess = (data) => {
+  const localId = localStorage.getItem('localId');
+  const idToken = localStorage.getItem('idToken');
+  const expiresIn = localStorage.getItem('expiresIn');
+  return {
+    type: action.LOGIN_SUCCESS,
+    localId: localId,
+    idToken: idToken,
+    expiresIn: expiresIn,
+  };
+};
+export const loginFailed = (error) => {
+  return {
+    type: action.LOGIN_FAILED,
+    error
+  };
+};
+
+export const logout = () => {
+  return (dispatch) => {
+    localStorage.clear();
+    dispatch(logoutChecker());
+  };
+};
+export const logoutChecker=()=>{
+    return {
+        type: action.LOGOUT_CHECKER,
+    }
+}

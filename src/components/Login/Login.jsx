@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Login.scss';
 import Email from '../../assets/icons/message.svg';
 import Password from '../../assets/icons/lock.svg';
 import TogglePassword from '../../assets/icons/view.svg';
 import Google from '../../assets/icons/google.svg';
 import MEM from '../../assets/icons/mem.png';
-const Login = () => {
+import { connect } from 'react-redux';
+import * as action from '../../store/actions/index';
+const Login = ({ onAuth, hasError }) => {
   const [passwordToggle, setPasswordToggle] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-
+  const [isSignUp, setIsSignUp] = useState(false);
+    useEffect(() => {
+      console.log(hasError);
+    }, [hasError]);
   const signIn = () => {
     const pattern = new RegExp(
       /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
@@ -29,6 +34,7 @@ const Login = () => {
       setError('Invalid Email');
     } else {
       setError(null);
+      onAuth(email, password, isSignUp);
     }
   };
 
@@ -65,9 +71,17 @@ const Login = () => {
         />
       </div>
       <p style={{ color: 'red', marginBotton: '25px' }}>
-        {error ? error : null}
+        {hasError ? hasError  : error ? error : null}
       </p>
-      <button onClick={() => signIn()}>Sign In</button>
+      <button onClick={() => signIn()}>
+        {isSignUp ? 'Sign Up' : 'Sign In'}
+      </button>
+      <p
+        className="login-card__forgot-password"
+        onClick={() => setIsSignUp(!isSignUp)}
+      >
+        Switch to {isSignUp ? 'Sign In' : 'Sign Up'}
+      </p>
       <p className="login-card__forgot-password">Forgot your password?</p>
       <hr />
       <div className="login-card__alternate-login">
@@ -81,4 +95,15 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuth: (email, password, isSignUp) =>
+      dispatch(action.loginInit(email, password, isSignUp)),
+  };
+};
+const mapStateToProps = (state) => {
+  return {
+    hasError: state.error,
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
