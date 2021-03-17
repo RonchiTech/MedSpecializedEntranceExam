@@ -1,0 +1,21 @@
+.dashboard {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(153, 153, 153);
+  display: flex;
+}
+
+.dashboard-navigation {
+  background-color: rgb(23, 23, 31);
+  width: 15%;
+}
+
+.dashboard-contents {
+  background-color: rgb(196, 196, 196);
+  width: 85%;
+}
+.dasboard-nav__logo-container {
+  width: 80%;
+  margin: 25px auto;
+  text-align: center;
+}
