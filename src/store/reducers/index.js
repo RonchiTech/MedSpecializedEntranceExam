@@ -5,6 +5,7 @@ const initialState = {
   idToken: null,
   expiresIn: null,
   error: null,
+  users: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -30,12 +31,22 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.error,
-        isLoading: false
+        isLoading: false,
       };
     case actionType.INITIALIZE:
       return {
         ...state,
         isLoading: true,
+      };
+    case actionType.FETCH_DATA_SUCCESS:
+      return {
+        ...state,
+        users: action.payload,
+      };
+    case actionType.ADD_USER_SUCCESS:
+      return {
+        ...state,
+        users: action.payload,
       };
     default:
       return state;

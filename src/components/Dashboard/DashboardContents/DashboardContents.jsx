@@ -1,9 +1,8 @@
 import React from 'react';
-import Table from './Table';
-import Pagination from './Pagination/Pagination';
-import Filter from './Filter/Filter';
+import User from './User/User';
+import AddUser from './AddUsers/AddUsers';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Route, Switch } from 'react-router-dom';
 
 import * as action from '../../../store/actions/';
 
@@ -26,14 +25,10 @@ const DashboardContents = ({ onLogOut }) => {
           Logout
         </p>
       </div>
-      <div className="user">
-        <h3>Users</h3>
-        <button>Invite User</button>
-      </div>
-      <hr />
-      <Filter />
-      <Table />
-      <Pagination />
+      <Switch>
+        <Route path="/users/add-users" component={AddUser} />
+        <Route path="/users"  component={User} />
+      </Switch>
     </div>
   );
 };

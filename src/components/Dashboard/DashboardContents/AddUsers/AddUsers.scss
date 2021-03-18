@@ -1,0 +1,31 @@
+.add-user_container {
+  color: black;
+
+  .add-user__form {
+    div {
+      margin: 20px;
+    }
+    label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: block;
+    }
+    input {
+      width: 320px;
+      padding: 10px 15px;
+    }
+    select {
+      width: 320px;
+      padding: 10px 15px;
+    }
+    button {
+      padding: 20px 45px;
+      width: 320px;
+      color: #fff;
+      background-color: #3dc73d;
+      border: none;
+      border-radius: 5px;
+      margin-left: 25px;
+    }
+  }
+}

@@ -64,3 +64,75 @@ export const initialize = () => {
     type: action.INITIALIZE,
   };
 };
+
+export const addUserInit = (email, name, status, role) => {
+  return (dispatch) => {
+    const url =
+      'https://medspeacialized-default-rtdb.firebaseio.com/users.json';
+    const data = {
+      email,
+      name,
+      status,
+      role,
+    };
+    axios
+      .post(url, data)
+      .then((response) => {
+        dispatch(fetchData());
+      })
+      .catch((error) => {
+        dispatch(addUserFailed(error));
+      });
+  };
+};
+
+export const addUserSuccess = (payload) => {
+  return {
+    type: action.ADD_USER_SUCCESS,
+    payload,
+  };
+};
+export const addUserFailed = (error) => {
+  return {
+    type: action.ADD_USER_FAILED,
+    error,
+  };
+};
+
+export const fetchData = () => {
+  return (dispatch) => {
+    axios
+      .get('https://medspeacialized-default-rtdb.firebaseio.com/users.json')
+      .then((response) => {
+        dispatch(fetchDataSuccess(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
+export const fetchDataSuccess = (payload) => {
+  return {
+    type: action.FETCH_DATA_SUCCESS,
+    payload,
+  };
+};
+
+export const fetchDataFailed = (error) => {
+  return {
+    type: action.FETCH_DATA_FAILED,
+    error,
+  };
+};
+
+export const deleteData = (id) => {
+  return (dispatch) => {
+    axios
+      .delete(
+        `https://medspeacialized-default-rtdb.firebaseio.com/users/${id}.json`
+      )
+      .then((response) => {
+        dispatch(fetchData());
+      });
+  };
+};
