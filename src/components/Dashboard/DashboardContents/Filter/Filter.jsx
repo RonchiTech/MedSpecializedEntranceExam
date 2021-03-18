@@ -4,7 +4,10 @@ const Filter = () => {
   return (
     <>
       <select className="category" id="category" name="category">
-        <option value="Name">Name</option>
+        <option value="name">Name</option>
+        <option value="Name">Email</option>
+        <option value="name">Status</option>
+        <option value="Name">Role</option>
       </select>
       <input className="search" placeholder="Search..." />
     </>

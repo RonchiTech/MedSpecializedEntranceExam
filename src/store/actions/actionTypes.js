@@ -6,3 +6,12 @@ export const LOGOUT = 'LOGOUT';
 export const LOGOUT_CHECKER = 'LOGOUT_CHECKER';
 
 export const INITIALIZE = 'INITIALIZE';
+
+export const ADD_USER_INIT = 'ADD_USER_INIT';
+export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
+export const ADD_USER_FAILED = 'ADD_USER_FAILED';
+
+export const FETCH_DATA = 'FETCH_DATA';
+export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
+export const FETCH_DATA_FAILED = 'FETCH_DATA_FAILED';
+
