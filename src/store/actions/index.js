@@ -124,3 +124,15 @@ export const fetchDataFailed = (error) => {
     error,
   };
 };
+
+export const deleteData = (id) => {
+  return (dispatch) => {
+    axios
+      .delete(
+        `https://medspeacialized-default-rtdb.firebaseio.com/users/${id}.json`
+      )
+      .then((response) => {
+        dispatch(fetchData());
+      });
+  };
+};

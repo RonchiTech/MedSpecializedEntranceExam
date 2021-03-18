@@ -7,11 +7,14 @@ import Default from '../../../assets/icons/user-default.svg';
 import * as action from '../../../store/actions';
 import { connect } from 'react-redux';
 
-const Table = ({ onFetchData, users }) => {
+const Table = ({ onFetchData, users, onDeleteData }) => {
   useEffect(() => {
     onFetchData();
   }, [onFetchData]);
-  console.log(users);
+
+  const onDeleteUser = (user) => {
+    onDeleteData(user);
+  };
   let results = null;
   if (users) {
     results = Object.keys(users).map((user, index) => {
@@ -31,7 +34,12 @@ const Table = ({ onFetchData, users }) => {
             <img src={UpdateIcon} alt="View" />
           </td>
           <td>
-            <img src={TrashIcon} alt="Trash" />
+            <img
+              className="delete-user__icon"
+              src={TrashIcon}
+              alt="Trash"
+              onClick={() => onDeleteUser(user)}
+            />
           </td>
         </tr>
       );
@@ -58,6 +66,7 @@ const Table = ({ onFetchData, users }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onFetchData: () => dispatch(action.fetchData()),
+    onDeleteData: (id) => dispatch(action.deleteData(id)),
   };
 };
 const mapDispatchStateToProps = (state) => {
