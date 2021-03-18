@@ -6,6 +6,7 @@ import TrashIcon from '../../../assets/icons/trash.svg';
 import Default from '../../../assets/icons/user-default.svg';
 import * as action from '../../../store/actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Table = ({ onFetchData, users, onDeleteData }) => {
   useEffect(() => {
@@ -31,7 +32,9 @@ const Table = ({ onFetchData, users, onDeleteData }) => {
             <img src={ViewIcon} alt="view" />
           </td>
           <td>
-            <img src={UpdateIcon} alt="View" />
+            <Link to={`/users/update-user/${user}`} >
+              <img src={UpdateIcon} alt="View" />
+            </Link>
           </td>
           <td>
             <img
