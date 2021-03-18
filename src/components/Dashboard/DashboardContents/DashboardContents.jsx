@@ -1,6 +1,8 @@
 import React from 'react';
 import User from './User/User';
 import AddUser from './AddUsers/AddUsers';
+import UpdateUsers from './UpdateUsers/UpdateUsers'
+
 import { connect } from 'react-redux';
 import { useHistory, Route, Switch } from 'react-router-dom';
 
@@ -26,8 +28,9 @@ const DashboardContents = ({ onLogOut }) => {
         </p>
       </div>
       <Switch>
-        <Route path="/users/add-users" component={AddUser} />
-        <Route path="/users"  component={User} />
+        <Route path="/users/add-users"  component={AddUser} />
+        <Route path="/users/update-user/:id"  component={UpdateUsers} />
+        <Route path="/users" component={User} />
       </Switch>
     </div>
   );

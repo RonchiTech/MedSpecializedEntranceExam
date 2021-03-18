@@ -98,7 +98,24 @@ export const addUserFailed = (error) => {
     error,
   };
 };
-
+export const updateUserInit = (email, name, status, role, id) => {
+  return (dispatch) => {
+    const data = {
+      email,
+      name,
+      status,
+      role,
+    };
+    axios
+      .patch(
+        `https://medspeacialized-default-rtdb.firebaseio.com/users/${id}.json`,
+        data
+      )
+      .then((response) => {
+        dispatch(fetchData());
+      });
+  };
+};
 export const fetchData = () => {
   return (dispatch) => {
     axios
